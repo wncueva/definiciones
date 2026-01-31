@@ -1,0 +1,271 @@
+/* =========================================================
+   FUENTES Y VARIABLES – BLOG EDITORIAL CON COLOR
+========================================================= */
+
+:root {
+  --default-font: "EB Garamond", serif;
+  --heading-font: "Playfair Display", "EB Garamond", serif;
+  --nav-font: "Inter", sans-serif;
+
+  /* Paleta */
+  --background-color: #f1f4f8;        /* gris azulado suave */
+  --surface-color: #ffffff;
+  --default-color: #1f2933;
+  --heading-color: #0f172a;           /* azul oscuro editorial */
+  --accent-color: #1e3a8a;            /* azul profesional */
+  --accent-soft: #e0e7ff;             /* azul claro */
+  --muted-color: #64748b;
+  --contrast-color: #ffffff;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
+/* =========================================================
+   LAYOUT STICKY FOOTER (SOLUCIÓN DEFINITIVA)
+========================================================= */
+
+
+
+/* =========================================================
+   HEADER STICKY (SIEMPRE VISIBLE)
+========================================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+
+
+body {
+  font-family: var(--default-font);
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--default-color);
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #0f172a;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  background: linear-gradient(90deg, #0f172a, #1e3a8a);
+  padding: 22px 0;
+  border-bottom: 4px solid #c7d2fe;
+}
+
+.header .sitename {
+  font-family: var(--heading-font);
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+/* Buscador */
+
+.header input[type="text"] {
+  font-size: 15px;
+  padding: 9px 18px;
+  border-radius: 30px;
+  border: none;
+  min-width: 260px;
+}
+
+.header input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(199,210,254,0.8);
+}
+
+/* =========================================================
+   SLIDER
+========================================================= */
+/* =========================================================
+   FIX FINAL – ELIMINA BORDE BLANCO INFERIOR DEL SLIDER
+========================================================= */
+
+main {
+  padding: 0;
+  margin: 0;
+}
+
+#slider {
+  position: relative;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #0f172a;
+  overflow: hidden;
+}
+
+#slider .container-fluid,
+#slider .swiper,
+#slider .swiper-wrapper,
+#slider .swiper-slide {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  height: 678px;
+}
+
+#slider .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+/* mata cualquier espacio residual */
+#slider + * {
+  margin-top: 0 !important;
+}
+
+
+/* =========================================================
+   MODO BÚSQUEDA – OCULTAR SLIDER
+========================================================= */
+
+#slider {
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  overflow: hidden;
+}
+
+#slider.hidden {
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+}
+
+/* =========================================================
+   MENSAJE SIN RESULTADOS
+========================================================= */
+
+.no-results {
+  display: none;
+  text-align: center;
+  font-family: var(--heading-font);
+  font-size: 26px;
+  color: var(--muted-color);
+  margin: 80px 0;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   SECCIÓN DEFINICIONES
+========================================================= */
+
+.section {
+  padding: 90px 0;
+}
+
+.definition-item {
+  margin-bottom: 55px;
+}
+
+/* =========================================================
+   TARJETA DE DEFINICIÓN
+========================================================= */
+
+.blog-post {
+  background: var(--surface-color);
+  padding: 45px 50px;
+  border-radius: 14px;
+  border-left: 6px solid var(--accent-color);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* TÍTULO */
+
+.blog-post h3 {
+  font-family: var(--heading-font);
+  font-size: 34px;
+  color: var(--heading-color);
+  margin-bottom: 22px;
+  line-height: 1.2;
+}
+
+/* TEXTO */
+
+.blog-post p {
+  font-size: 19px;
+  margin-bottom: 18px;
+  color: var(--default-color);
+}
+
+/* PALABRA "EJEMPLO" */
+
+.blog-post p:nth-of-type(2) {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin: 35px 0 15px;
+}
+
+/* LINK */
+
+.blog-post a {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 35px 0;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .header .sitename {
+    font-size: 28px;
+  }
+
+  .header input[type="text"] {
+    min-width: 200px;
+  }
+
+  .blog-post {
+    padding: 30px;
+  }
+
+  .blog-post h3 {
+    font-size: 26px;
+  }
+}
